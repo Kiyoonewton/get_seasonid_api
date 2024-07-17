@@ -1,9 +1,7 @@
-const { ApolloServer } = require("@apollo/server");
-const { startStandaloneServer } = require("@apollo/server/standalone");
 const getSeasonKey = require("./puppeteer");
-const typeDefs = `#graphql
-
-type Query {
+const { ApolloServer, gql } = require("apollo-server-lambda");
+const typeDefs = gql `
+  type Query {
     seasonId(id: Int): String
   }
 `;
@@ -18,7 +16,6 @@ const resolvers = {
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    context: ({ event, context }) => ({ event, context }),
 });
-startStandaloneServer(server).then(({ url }) => {
-    console.log(`🚀 Server ready at ${url}`);
-});
+exports.graphqlHandler = server.createHandler();
