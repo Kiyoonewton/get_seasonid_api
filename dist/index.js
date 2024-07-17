@@ -19,4 +19,6 @@ const server = new ApolloServer({
     typeDefs,
     resolvers,
 });
-startStandaloneServer(server);
+startStandaloneServer(server).then(({ url }) => {
+    console.log(`🚀 Server ready at ${url}`);
+});

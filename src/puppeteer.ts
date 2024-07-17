@@ -1,5 +1,7 @@
 const puppeteer = require("puppeteer");
+require("dotenv").config();
 
+const apiEndpoint = process.env.SEASON_ENDPOINT;
 module.exports = async (vflId: number) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -16,9 +18,7 @@ module.exports = async (vflId: number) => {
     "#sr-container > div > div > div.menu-wrapper.menu-full-width-bg.menu-mobile-top.menu-mobile-sticky > div.container.no-padding > ul > li:nth-child(6) > a";
   const clickFormCell =
     "#sr-container > div > div > div.container.container-main.contair-full-height-flex-auto > div > div > div > div > div.panel.margin-bottom > div > div > div:nth-child(1) > table > tbody > tr:nth-child(2)";
-  await page.goto(
-    "https://s5.sir.sportradar.com/bet9javirtuals/en/1/category/1111",
-  );
+  await page.goto(apiEndpoint);
 
   await page.locator(bunPath).click();
   await page.locator(achivePath).click();
