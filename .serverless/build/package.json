@@ -1,0 +1,9 @@
+{
+  "dependencies": {},
+  "name": "node_selenium",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Kiyoonewton/GetSeasonIdAPI.git",
+  "author": "Kiyoonewton <Kiyoonewton41@gmail.com>",
+  "license": "MIT"
+}

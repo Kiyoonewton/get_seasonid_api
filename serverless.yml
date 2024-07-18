@@ -1,0 +1,20 @@
+service: apollo-lambda
+provider:
+  name: aws
+  runtime: nodejs20.x
+  httpApi:
+    cors: true
+functions:
+  graphql:
+    handler: src/server.graphqlHandler # highlight-line
+    events:
+      - httpApi:
+          path: /
+          method: POST
+      - httpApi:
+          path: /
+          method: GET
+# Omit the following lines if you aren't using TS!
+
+custom:
+  build.esbuild: false

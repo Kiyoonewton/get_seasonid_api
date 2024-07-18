@@ -1,24 +1,17 @@
 {
+  "dependencies": {
+    "@apollo/server": "^4.10.4",
+    "@as-integrations/aws-lambda": "^3.1.0",
+    "graphql": "^16.9.0",
+    "serverless-esbuild": "^1.52.1"
+  },
   "name": "node_selenium",
   "version": "1.0.0",
-  "description": "Crawling bot",
   "main": "index.js",
-  "author": "Kiyoonewton",
+  "repository": "https://github.com/Kiyoonewton/GetSeasonIdAPI.git",
+  "author": "Kiyoonewton <Kiyoonewton41@gmail.com>",
   "license": "MIT",
-  "type": "commonjs",
-  "scripts": {
-    "compile": "tsc",
-    "start": "yarn run compile && node ./dist/graphql.js"
-  },
-  "dependencies": {
-    "apollo-server-lambda": "^3.13.0",
-    "chrome-aws-lambda": "^10.1.0",
-    "dotenv": "^16.4.5",
-    "graphql": "^16.9.0"
-  },
   "devDependencies": {
-    "@types/node": "^20.14.11",
-    "nodemon": "^3.1.4",
     "typescript": "^5.5.3"
   }
 }
