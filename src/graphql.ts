@@ -20,7 +20,6 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-//   context: ({ event, context }) => ({ event, context }),
   introspection: true,
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
