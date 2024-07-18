@@ -1,5 +1,6 @@
 const getSeasonKey = require("./puppeteer");
-const { ApolloServer, gql } = require("apollo-server-lambda");
+const { ApolloServer, gql } = require('apollo-server-lambda');
+const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core');
 
 const typeDefs = gql`
   type Query {
@@ -19,7 +20,9 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ event, context }) => ({ event, context }),
+//   context: ({ event, context }) => ({ event, context }),
+  introspection: true,
+  plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
 exports.graphqlHandler = server.createHandler();

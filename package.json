@@ -8,14 +8,13 @@
   "type": "commonjs",
   "scripts": {
     "compile": "tsc",
-    "start": "yarn run compile && node ./dist/index.js"
+    "start": "yarn run compile && node ./dist/graphql.js"
   },
   "dependencies": {
     "apollo-server-lambda": "^3.13.0",
     "chrome-aws-lambda": "^10.1.0",
     "dotenv": "^16.4.5",
-    "graphql": "^16.9.0",
-    "puppeteer-core": "^22.13.1"
+    "graphql": "^16.9.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.11",

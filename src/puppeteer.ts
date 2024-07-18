@@ -1,10 +1,9 @@
-const puppeteer = require("puppeteer-core");
 require("dotenv").config();
 const chromium = require('chrome-aws-lambda');
 
 const apiEndpoint = process.env.SEASON_ENDPOINT;
 module.exports = async (vflId: number) => {
-  const browser = await puppeteer.launch({
+  const browser = await chromium.puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
     executablePath: await chromium.executablePath,
