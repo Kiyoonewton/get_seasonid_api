@@ -1,2 +1,5 @@
 .env
 /node_modules
+.serverless/*/.DS_Store
+.serverless/.DS_Store
+.DS_Store
