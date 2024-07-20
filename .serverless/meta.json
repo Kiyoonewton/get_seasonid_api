@@ -1,7 +1,7 @@
 {
   "/Users/kiyoonewton/Desktop/all_Code/node_selenium": {
     "versionSfCore": null,
-    "versionFramework": "4.1.12",
+    "versionFramework": "4.1.16",
     "isWithinCompose": false,
     "isCompose": false,
     "composeOrgName": null,
@@ -184,7 +184,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/apollo-lambda/dev/1721301589596-2024-07-18T11:19:49.596Z/apollo-lambda.zip"
+                  "S3Key": "serverless/apollo-lambda/dev/1721461039969-2024-07-20T07:37:19.969Z/apollo-lambda.zip"
                 },
                 "Handler": "src/server.graphqlHandler",
                 "Runtime": "nodejs20.x",
@@ -207,14 +207,14 @@
                 "GraphqlLogGroup"
               ]
             },
-            "GraphqlLambdaVersiontNgmipnmsEZbfOi4jOBNlJLGUFNafXwt4KS0ZOo6s4": {
+            "GraphqlLambdaVersioniPNKDjZ8KExMdzzM40mCHctMQG4BBVKuPpcDwY2sA5U": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GraphqlLambdaFunction"
                 },
-                "CodeSha256": "R1kHjzL0T70xiA51R+BbLhiU1YFREi0kTF9CM8nlh+4="
+                "CodeSha256": "ifdGBFkXrmk0RqHP0nlQrH7GeGUt5hG9We5noVmBnh4="
               }
             },
             "HttpApi": {
@@ -366,7 +366,7 @@
             "GraphqlLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GraphqlLambdaVersiontNgmipnmsEZbfOi4jOBNlJLGUFNafXwt4KS0ZOo6s4"
+                "Ref": "GraphqlLambdaVersioniPNKDjZ8KExMdzzM40mCHctMQG4BBVKuPpcDwY2sA5U"
               },
               "Export": {
                 "Name": "sls-apollo-lambda-dev-GraphqlLambdaFunctionQualifiedArn"
@@ -522,7 +522,7 @@
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "GraphqlLambdaVersiontNgmipnmsEZbfOi4jOBNlJLGUFNafXwt4KS0ZOo6s4"
+          "versionLogicalId": "GraphqlLambdaVersioniPNKDjZ8KExMdzzM40mCHctMQG4BBVKuPpcDwY2sA5U"
         }
       },
       "custom": {
@@ -536,7 +536,7 @@
     "options": {},
     "error": null,
     "params": {},
-    "machineId": "d651d32d12269bc46ebaefb7786fb86c",
+    "machineId": "6154390fcd1b173c7aee315ef083574e",
     "accessKeyV2": "<REDACTED>",
     "accessKeyV1": "<REDACTED>",
     "orgId": "fb8c6343-20d4-4481-9394-fb718dfb7e3e",
@@ -556,16 +556,16 @@
     "userEmail": "kiyoonewton41@gmail.com",
     "serviceProviderAwsCredentials": "<REDACTED>",
     "serviceProviderAwsAccountId": "630183307661",
-    "versionSf": "4.1.12",
+    "versionSf": "4.1.16",
     "serviceProviderAwsCfStackName": "apollo-lambda-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:630183307661:stack/apollo-lambda-dev/06bf35a0-44f7-11ef-a7fb-0affc01f3017",
     "serviceProviderAwsCfStackCreated": "2024-07-18T11:15:23.312Z",
-    "serviceProviderAwsCfStackUpdated": "2024-07-18T11:20:51.841Z",
+    "serviceProviderAwsCfStackUpdated": "2024-07-20T07:37:35.696Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "GraphqlLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:630183307661:function:apollo-lambda-dev-graphql:1",
+        "OutputValue": "arn:aws:lambda:us-east-1:630183307661:function:apollo-lambda-dev-graphql:15",
         "Description": "Current Lambda function version",
         "ExportName": "sls-apollo-lambda-dev-GraphqlLambdaFunctionQualifiedArn"
       },
