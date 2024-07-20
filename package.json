@@ -2,10 +2,20 @@
   "dependencies": {
     "@apollo/server": "^4.10.4",
     "@as-integrations/aws-lambda": "^3.1.0",
+    "@sparticuz/chromium-min": "^126.0.0",
     "dotenv": "^16.4.5",
+    "esbuild": "0.8.57",
     "graphql": "^16.9.0",
-    "puppeteer": "^22.13.1",
+    "puppeteer-core": "22.13.1",
     "serverless-esbuild": "^1.52.1"
+  },
+  "scripts": {
+    "develop": "rm -rf .serverless && serverless invoke local -f graphql -p query.json",
+    "deploy": "rm -rf .serverless && serverless deploy",
+    "dev": "tsc src/* --outdir dist/ && node dist/server.js"
+  },
+  "overrides": {
+    "clone-deep": "^4.0.1"
   },
   "name": "node_selenium",
   "version": "1.0.0",
