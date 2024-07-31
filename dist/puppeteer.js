@@ -36,74 +36,84 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var chromium_1 = require("@sparticuz/chromium");
+var chromium_min_1 = require("@sparticuz/chromium-min");
 var puppeteer_core_1 = require("puppeteer-core");
 var apiEndpoint = "https://s5.sir.sportradar.com/bet9javirtuals/en/1/category/1111";
 module.exports = function (vflId) { return __awaiter(void 0, void 0, void 0, function () {
-    var browser, _a, _b, page, bunPath, achivePath, clickFormCell, bunPathHandle, achivePathHandle, clickFormCellHandle, currentUrl, seasonKey;
-    var _c;
-    return __generator(this, function (_d) {
-        switch (_d.label) {
+    var browser, _a, _b, page, _c, _d, _e, _f, _g, _h, bunPath, achivePath, clickFormCell, bunPathHandle, achivePathHandle, clickFormCellHandle, currentUrl, seasonKey;
+    var _j;
+    return __generator(this, function (_k) {
+        switch (_k.label) {
             case 0:
                 _b = (_a = puppeteer_core_1.default).launch;
-                _c = {
-                    args: chromium_1.default.args,
-                    defaultViewport: chromium_1.default.defaultViewport
+                _j = {
+                    args: chromium_min_1.default.args,
+                    defaultViewport: chromium_min_1.default.defaultViewport
                 };
-                return [4 /*yield*/, chromium_1.default.executablePath];
-            case 1: return [4 /*yield*/, _b.apply(_a, [(_c.executablePath = _d.sent(),
-                        _c.headless = chromium_1.default.headless,
-                        _c.ignoreHTTPSErrors = true,
-                        _c)])];
+                return [4 /*yield*/, chromium_min_1.default.executablePath("https://github.com/Sparticuz/chromium/releases/download/v126.0.0/chromium-v126.0.0-pack.tar")];
+            case 1: return [4 /*yield*/, _b.apply(_a, [(_j.executablePath = _k.sent(),
+                        _j.headless = chromium_min_1.default.headless,
+                        _j.ignoreHTTPSErrors = true,
+                        _j)])];
             case 2:
-                browser = _d.sent();
+                browser = _k.sent();
                 return [4 /*yield*/, browser.newPage()];
             case 3:
-                page = _d.sent();
+                page = _k.sent();
                 return [4 /*yield*/, page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")];
             case 4:
-                _d.sent();
+                _k.sent();
                 return [4 /*yield*/, page.setExtraHTTPHeaders({
                         "Accept-Language": "en-US,en;q=0.9",
                     })];
             case 5:
-                _d.sent();
+                _k.sent();
+                _d = (_c = console).log;
+                _e = ["Chromium:"];
+                return [4 /*yield*/, browser.version()];
+            case 6:
+                _d.apply(_c, _e.concat([_k.sent()]));
+                _g = (_f = console).log;
+                _h = ["Page Title:"];
+                return [4 /*yield*/, page.title()];
+            case 7:
+                _g.apply(_f, _h.concat([_k.sent()]));
                 bunPath = "#sr-container > div > div > div.container.container-main.contair-full-height-flex-auto > div > div > div > div > div > span > div > div > div > div > div > a:nth-child(".concat(vflId, ")");
                 achivePath = "#sr-container > div > div > div.menu-wrapper.menu-full-width-bg.menu-mobile-top.menu-mobile-sticky > div.container.no-padding > ul > li:nth-child(6) > a";
                 clickFormCell = "#sr-container > div > div > div.container.container-main.contair-full-height-flex-auto > div > div > div > div > div.panel.margin-bottom > div > div > div:nth-child(1) > table > tbody > tr:nth-child(2)";
                 return [4 /*yield*/, page.goto(apiEndpoint)];
-            case 6:
-                _d.sent();
-                return [4 /*yield*/, page.$(bunPath)];
-            case 7:
-                bunPathHandle = _d.sent();
-                if (!bunPathHandle) return [3 /*break*/, 9];
-                return [4 /*yield*/, bunPathHandle.click()];
             case 8:
-                _d.sent();
-                _d.label = 9;
-            case 9: return [4 /*yield*/, page.$(achivePath)];
+                _k.sent();
+                return [4 /*yield*/, page.$(bunPath)];
+            case 9:
+                bunPathHandle = _k.sent();
+                if (!bunPathHandle) return [3 /*break*/, 11];
+                return [4 /*yield*/, bunPathHandle.click()];
             case 10:
-                achivePathHandle = _d.sent();
-                if (!achivePathHandle) return [3 /*break*/, 12];
+                _k.sent();
+                _k.label = 11;
+            case 11: return [4 /*yield*/, page.$(achivePath)];
+            case 12:
+                achivePathHandle = _k.sent();
+                if (!achivePathHandle) return [3 /*break*/, 14];
                 return [4 /*yield*/, achivePathHandle.click()];
-            case 11:
-                _d.sent();
-                _d.label = 12;
-            case 12: return [4 /*yield*/, page.$(clickFormCell)];
             case 13:
-                clickFormCellHandle = _d.sent();
-                if (!clickFormCellHandle) return [3 /*break*/, 15];
-                return [4 /*yield*/, clickFormCellHandle.click()];
-            case 14:
-                _d.sent();
-                _d.label = 15;
+                _k.sent();
+                _k.label = 14;
+            case 14: return [4 /*yield*/, page.$(clickFormCell)];
             case 15:
+                clickFormCellHandle = _k.sent();
+                if (!clickFormCellHandle) return [3 /*break*/, 17];
+                return [4 /*yield*/, clickFormCellHandle.click()];
+            case 16:
+                _k.sent();
+                _k.label = 17;
+            case 17:
                 currentUrl = page.url();
                 seasonKey = currentUrl.substring(currentUrl.lastIndexOf("/") + 1);
                 return [4 /*yield*/, browser.close()];
-            case 16:
-                _d.sent();
+            case 18:
+                _k.sent();
                 return [2 /*return*/, seasonKey];
         }
     });
