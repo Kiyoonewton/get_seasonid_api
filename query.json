@@ -1,16 +1,11 @@
 {
-  "version": "2",
+  "resource": "/graphql",
+  "path": "/graphql",
+  "httpMethod": "POST",
   "headers": {
-    "content-type": "application/json"
+    "Content-Type": "application/json"
   },
-  "isBase64Encoded": false,
-  "rawQueryString": "",
-  "requestContext": {
-    "http": {
-      "method": "POST"
-    }
-  },
-  "rawPath": "/",
-  "routeKey": "/",
-  "body": "{\"operationName\": null, \"variables\": null, \"query\": \"{ seasonId(id: 3) }\"}"
+  "queryStringParameters": null,
+  "body": "{\"query\":\"{ hello }\"}",
+  "isBase64Encoded": false
 }
