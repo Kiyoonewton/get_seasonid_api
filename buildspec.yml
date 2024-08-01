@@ -1,0 +1,36 @@
+version: 0.2
+
+env:
+  variables:
+    S3_BUCKET: "pupperteer-storage"
+    AWS_REGION: "us-east-1"
+    DEPLOYMENT_ENV: "production"
+
+cache:
+  paths:
+    - node_modules/**
+
+phases:
+  install:
+    commands:
+      - |
+        if [ -d "node_modules" ]; then
+          echo "Using cached node_modules";
+        else
+          echo "Installing dependencies";
+          npm install;
+        fi
+  pre_build:
+    commands:
+      - npm prune --production
+  build:
+    commands:
+      - aws cloudformation package --template template.yaml --s3-bucket $S3_BUCKET --output-template template-export.yml
+  post_build:
+    commands:
+      - echo "Build completed successfully."
+
+artifacts:
+  type: zip
+  files:
+    - template-export.yml

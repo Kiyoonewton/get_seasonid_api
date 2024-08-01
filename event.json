@@ -1,0 +1,11 @@
+{
+  "httpMethod": "POST",
+  "body": "{\"operationName\": null, \"variables\": null, \"query\": \"{ seasonId(id: 3) }\"}",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "requestContext": {
+    "httpMethod": "POST",
+    "path": "/graphql"
+  }
+}
