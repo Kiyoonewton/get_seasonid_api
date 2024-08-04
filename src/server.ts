@@ -3,31 +3,15 @@ import {
   startServerAndCreateLambdaHandler,
   handlers,
 } from "@as-integrations/aws-lambda";
-const getSeasonKey = require("./puppeteer");
-
-const typeDefs = `#graphql
-type Query {
-    seasonId(id: Int): String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    seasonId: async (_: void, args: { id: number }) => {
-      console.log(args.id);
-
-      const seasonKey = await getSeasonKey(args?.id);
-      return seasonKey;
-    },
-  },
-};
+import { resolvers } from "./gql/resolver.js";
+import { TypeDefs } from "./gql/schema.js";
 
 const server = new ApolloServer({
-  typeDefs,
+  typeDefs: TypeDefs,
   resolvers,
 });
 
 export const graphqlHandler = startServerAndCreateLambdaHandler(
   server,
-  handlers.createAPIGatewayProxyEventV2RequestHandler(),
+  handlers.createAPIGatewayProxyEventV2RequestHandler()
 );

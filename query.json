@@ -12,5 +12,5 @@
   },
   "rawPath": "/",
   "routeKey": "/",
-  "body": "{\"operationName\": null, \"variables\": null, \"query\": \"{ seasonId(id: 3) }\"}"
+  "body": "{\"operationName\": null, \"variables\": null, \"query\": \"{ seasonId(vflId: 3, position:3 ) }\"}"
 }

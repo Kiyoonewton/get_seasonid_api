@@ -6,15 +6,11 @@ provider:
     cors: true
 functions:
   graphql:
-    handler: src/server.graphqlHandler # highlight-line
+    handler: src/server.graphqlHandler
     events:
       - httpApi:
           path: /
           method: POST
-      - httpApi:
-          path: /
-          method: GET
-# Omit the following lines if you aren't using TS!
 
 custom:
   build.esbuild: false
