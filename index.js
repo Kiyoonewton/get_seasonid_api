@@ -1,17 +1,11 @@
 // PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = 1;
 const chromium = require("@sparticuz/chromium");
-const puppeteer = require("puppeteer-core");
+const puppeteer = require("puppeteer");
 
 const apiEndpoint =
   "https://s5.sir.sportradar.com/bet9javirtuals/en/1/category/1111";
-exports.module  = async (vflId) => {
-  const browser = await puppeteer.launch({
-    args: chromium.args,
-    defaultViewport: chromium.defaultViewport,
-    executablePath: await chromium.executablePath(),
-    headless: chromium.headless,
-    ignoreHTTPSErrors: true,
-  });
+(async (vflId) => {
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   await page.setUserAgent(
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
@@ -44,5 +38,6 @@ exports.module  = async (vflId) => {
   const currentUrl = page.url();
   const seasonKey = currentUrl.substring(currentUrl.lastIndexOf("/") + 1);
   await browser.close();
+  console.log(season);
   return seasonKey;
-};
+})(3);
