@@ -1,0 +1,8 @@
+version = 0.2
+[default.deploy.parameters]
+stack_name = "kiyoonewton"
+resolve_s3 = true
+s3_prefix = "kiyoonewton"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+image_repositories = []

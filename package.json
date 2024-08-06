@@ -4,9 +4,7 @@
     "puppeteer": "^22.15.0"
   },
   "scripts": {
-    "develop": "rm -rf .serverless && serverless invoke local -f graphql -p query.json",
-    "deploy": "rm -rf .serverless && serverless deploy",
-    "dev": "tsc src/* --outdir dist/ && node dist/server.js"
+    "start": "sam local start-api"
   },
   "overrides": {
     "clone-deep": "^4.0.1"

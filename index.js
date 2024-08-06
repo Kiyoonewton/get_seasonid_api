@@ -64,21 +64,26 @@ if (process.env.NODE_ENV === "dev") {
   console.log(await fetchSeasonId({ vflId: 3, position: 3 }));
 }
 
-export const handler = async (event, context, callback) => {
-  try {
-    if (!event.vflId || !event.position) {
-      throw new Error("Please provide both vflId and position");
-    }
-
-    const response = {
-      statusCode: 200,
-      body: await fetchSeasonId({
-        vflId: event.vflId,
-        position: event.position,
-      }),
-    };
-    callback(null, response);
-  } catch (error) {
-    callback(error);
+export const handler = async (event) => {
+  if (event.httpMethod !== "GET") {
+    throw new Error(
+      `postMethod only accepts GET method, you tried: ${event.httpMethod} method.`,
+    );
   }
+  const { vflId, position } = event.queryStringParameters;
+
+  if (!vflId || !position) {
+    throw new Error("Please provide both vflId and position");
+  }
+
+  const response = {
+    statusCode: 200,
+    body: JSON.stringify(
+      await fetchSeasonId({
+        vflId: Number(vflId),
+        position: Number(position),
+      }),
+    ),
+  };
+  return response;
 };
