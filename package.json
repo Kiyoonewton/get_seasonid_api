@@ -1,13 +1,7 @@
 {
   "dependencies": {
-    "@apollo/server": "^4.10.4",
-    "@as-integrations/aws-lambda": "^3.1.0",
-    "@sparticuz/chromium-min": "^126.0.0",
-    "dotenv": "^16.4.5",
-    "esbuild": "0.8.57",
-    "graphql": "^16.9.0",
-    "puppeteer-core": "22.13.1",
-    "serverless-esbuild": "^1.52.1"
+    "@sparticuz/chromium": "^126.0.0",
+    "puppeteer": "^22.15.0"
   },
   "scripts": {
     "develop": "rm -rf .serverless && serverless invoke local -f graphql -p query.json",
@@ -23,6 +17,7 @@
   "repository": "https://github.com/Kiyoonewton/GetSeasonIdAPI.git",
   "author": "Kiyoonewton <Kiyoonewton41@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
     "typescript": "^5.5.3"
   }
