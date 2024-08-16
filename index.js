@@ -17,7 +17,7 @@ export const fetchSeasonId = async ({ vflId, position }) => {
       process.env.NODE_ENV === "dev"
         ? undefined
         : await chromium.executablePath(),
-    headless: process.env.NODE_ENV === "dev" ? undefined : chromium.headless,
+    headless: process.env.NODE_ENV === "dev" ? false : chromium.headless,
     ignoreHTTPSErrors: true,
   });
   const page = await browser.newPage();

@@ -4,7 +4,8 @@
     "puppeteer": "^22.15.0"
   },
   "scripts": {
-    "start": "sam local start-api"
+    "start": "sam local start-api",
+    "dev": "NODE_ENV=dev node index.js"
   },
   "overrides": {
     "clone-deep": "^4.0.1"
